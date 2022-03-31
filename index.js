@@ -1,7 +1,9 @@
 let options = ["rock", "paper", "scissors"];
 let choice = options[Math.floor(Math.random() * options.length)];
 const computerSelection = computerPlay();
+let playerSelection = 'ROCK'
 
+playerSelection = playerSelection.toLowerCase()
 
 
 
@@ -10,17 +12,7 @@ function computerPlay() {
     return choice;
 }
 
-function playerSelection(pick) {
-    if (pick.toLowerCase() === 'rock'.toLowerCase()) {
-        return 'rock';
-    } else if(pick.toLowerCase() === 'paper'.toLowerCase()) {
-        return 'paper';
-    } else if(pick.toLowerCase() === 'scissors'.toLowerCase()) {
-        return 'scissors';
-    }  else {
-        return 'Player 1: Please select rock, paper, or scissors.'
-    }
-}
+
 
 function playRound(playerSelection, computerPlay) {
     if ((playerSelection === 'rock') && (computerPlay === 'scissors')) {
@@ -55,5 +47,8 @@ function playRound(playerSelection, computerPlay) {
     }
 }
 
-playerSelection = 'rock'
+function game() {
+
+}
+
 console.log(playRound(playerSelection, computerSelection));
