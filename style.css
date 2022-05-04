@@ -1,15 +1,33 @@
 .container {
   display: flex;
   flex-direction: column;
+  gap: 1em;
 }
 
 h1 {
   display: flex;
   justify-content: center;
 }
-
 .buttons {
   display: flex;
   justify-content: center;
   gap: 2em;
+}
+
+.selected {
+  display: flex;
+  justify-content: center;
+}
+.scores {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+.winner {
+  display: flex;
+  justify-content: center;
+}
+
+.result {
 }

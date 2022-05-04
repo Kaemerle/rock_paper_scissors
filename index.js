@@ -1,19 +1,16 @@
 "use strict"
-const computerSelection = computerPlay();
-// let playerSelection = prompt('Choose: rock, paper, or scissors!', 'Pick one!')
-// playerSelection = playerSelection.toLowerCase();
+
 let playerWin = 0
 let computerWin = 0
 let tieGame = 0
 let roundWinner = ''
 
-function computerPlay() {
-    let options = ["rock", "paper", "scissors"];
-    let choice = options[Math.floor(Math.random() * options.length)];
-    console.log(`The computer used ${choice}`)
-    return choice;
-}
-
+const player = document.querySelector('#player');
+const winner = document.querySelector('#winner');
+const computer = document.querySelector('#computer');  
+const tie = document.querySelector('#tie');
+const selected = document.querySelector('.selected');
+const result = document.querySelector('.result');
 
 const rockBtn = document.querySelector('.rockBtn');
 const paperBtn = document.querySelector('.paperBtn');
@@ -31,46 +28,71 @@ scissorsBtn.addEventListener('click', () => {
 
 
 
+function computerPlay() {
+    let options = ["rock", "paper", "scissors"];
+    let choice = options[Math.floor(Math.random() * options.length)];
+    return choice;
+}
+const computerSelection = computerPlay();
 
 
 function playRound(playerSelection, computerSelection) {
     // if its a tie, the tieGame tally is marked up
     if (playerSelection === computerSelection) {
-        console.log('Its a tie. Play again!');
+        winner.textContent = `Its a tie! Try again!`
         roundWinner = 'none'
-        result = roundWinner
+        tieGame++
+        tie.textContent = `Tie games: ${tieGame}`
         // the results of when the user picks rock
     } else if (playerSelection === 'rock') {
         if (computerSelection === 'paper') {
-            console.log(`${playerSelection} loses to ${computerSelection}! You lose!`);
+            selected.textContent = `The computer chose paper!`
+            winner.textContent = `${playerSelection} loses to ${computerSelection}! You lose!`;
             roundWinner = 'computer'
-            result = roundWinner 
+            computerWin++ 
+            computer.textContent = `Computer wins: ${computerWin}`
+
         } else if (computerSelection === 'scissors') {
-            console.log(`${computerSelection} loses to ${playerSelection}! You win!`)
+            selected.textContent = `The computer chose scissors!`
+            winner.textContent = `${computerSelection} loses to ${playerSelection}! You win!`;
             roundWinner = 'player'
-            result = roundWinner 
+            playerWin++ 
+            player.textContent = `Your wins: ${playerWin}`
+
         } 
         // the results of when the uses picks paper
     } else if (playerSelection === 'paper') {
         if (computerSelection === 'rock') {
-            console.log(`${playerSelection} beats ${computerSelection}! You win!`);
+            selected.textContent = `The computer chose rock!`
+            winner.textContent = `${playerSelection} beats ${computerSelection}! You win!`;
             roundWinner = 'player'
-            result = roundWinner 
+            playerWin++
+            player.textContent = `Your wins: ${playerWin}`
+
         } else if (computerSelection === 'scissors') {
-            console.log(`${computerSelection} beats ${playerSelection}! You lose!`)
+            selected.textContent = `The computer chose scissors!`
+            winner.textContent = `${computerSelection} beats ${playerSelection}! You lose!`;
             roundWinner = 'computer'
-            result = roundWinner 
+            computerWin++ 
+            computer.textContent = `Computer wins: ${computerWin}`
+
         } 
         // the results of when the user picks scissors
     } else if (playerSelection === 'scissors') {
         if (computerSelection === 'paper') {
-            console.log(`${playerSelection} beats ${computerSelection}! You win!`);
+            selected.textContent = `The computer chose paper!`
+            winner.textContent = `${playerSelection} beats ${computerSelection}! You win!`;
             roundWinner = 'player'
-            result = roundWinner 
+            playerWin++
+            player.textContent = `Your wins: ${playerWin}`
+
         } else if (computerSelection === 'rock') {
-            console.log(`${computerSelection} beats ${playerSelection}! You lose!`)
+            selected.textContent = `The computer chose rock!`
+            winner.textContent = `${computerSelection} beats ${playerSelection}! You lose!`;
             roundWinner = 'computer'
-            result = roundWinner 
+            computerWin++
+            computer.textContent = `Computer wins: ${computerWin}`
+
         } 
     }
 }
@@ -98,31 +120,3 @@ function playRound(playerSelection, computerSelection) {
 
 
 
-
-
-
-//  adding a roundWinner as a means of keeping track of rounds made my life alot easier than just trying to increment the player or computer win
-
-// function game() {
-//     let playerWin = 0 
-//     let computerWin = 0
-//     let tieGame = 0
-//     for (let i = 0; i < 5; i++) {
-//         let playerSelection = prompt('Choose: rock, paper, or scissors!', 'Pick one!')
-//     playerSelection = playerSelection.toLowerCase()
-//     computerPlay()
-//     playRound(playerSelection, computerSelection)
-//     if (result === 'none') {
-//         tieGame++
-//         console.log(`Tie game count: ${tieGame}`);
-//     } else if (result === 'player') {
-//         playerWin++
-//         console.log(`Player win game count: ${playerWin}`);
-//     } else if (result === 'computer') {
-//         computerWin++
-//         console.log(`Computer win game count: ${computerWin}`);
-//     }
-//     }
-// }
-
-// game()
