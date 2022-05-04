@@ -1,12 +1,11 @@
+"use strict"
 const computerSelection = computerPlay();
-let playerSelection = prompt('Choose: rock, paper, or scissors!', 'Pick one!')
-playerSelection = playerSelection.toLowerCase()
+// let playerSelection = prompt('Choose: rock, paper, or scissors!', 'Pick one!')
+// playerSelection = playerSelection.toLowerCase();
 let playerWin = 0
 let computerWin = 0
 let tieGame = 0
 let roundWinner = ''
-
-
 
 function computerPlay() {
     let options = ["rock", "paper", "scissors"];
@@ -14,6 +13,23 @@ function computerPlay() {
     console.log(`The computer used ${choice}`)
     return choice;
 }
+
+
+const rockBtn = document.querySelector('.rockBtn');
+const paperBtn = document.querySelector('.paperBtn');
+const scissorsBtn = document.querySelector('.scissorsBtn');
+
+rockBtn.addEventListener('click', () => {
+    playRound('rock', computerSelection)
+});
+paperBtn.addEventListener('click', () => {
+    playRound('paper', computerSelection)
+});
+scissorsBtn.addEventListener('click', () => {
+    playRound('scissors', computerSelection)
+});
+
+
 
 
 
@@ -59,25 +75,54 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
-    let playerWin = 0 
-    let computerWin = 0
-    let tieGame = 0
-    for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt('Choose: rock, paper, or scissors!', 'Pick one!')
-    playerSelection = playerSelection.toLowerCase()
-    computerPlay()
-    playRound(playerSelection, computerSelection)
-    if (result === 'none') {
-        tieGame++
-        console.log(`Tie game count: ${tieGame}`);
-    } else if (result === 'player') {
-        playerWin++
-        console.log(`Player win game count: ${playerWin}`);
-    } else if (result === 'computer') {
-        computerWin++
-        console.log(`Computer win game count: ${computerWin}`);
-    }
-    }
-}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//  adding a roundWinner as a means of keeping track of rounds made my life alot easier than just trying to increment the player or computer win
+
+// function game() {
+//     let playerWin = 0 
+//     let computerWin = 0
+//     let tieGame = 0
+//     for (let i = 0; i < 5; i++) {
+//         let playerSelection = prompt('Choose: rock, paper, or scissors!', 'Pick one!')
+//     playerSelection = playerSelection.toLowerCase()
+//     computerPlay()
+//     playRound(playerSelection, computerSelection)
+//     if (result === 'none') {
+//         tieGame++
+//         console.log(`Tie game count: ${tieGame}`);
+//     } else if (result === 'player') {
+//         playerWin++
+//         console.log(`Player win game count: ${playerWin}`);
+//     } else if (result === 'computer') {
+//         computerWin++
+//         console.log(`Computer win game count: ${computerWin}`);
+//     }
+//     }
+// }
+
+// game()
