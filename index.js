@@ -38,7 +38,7 @@ function computerPlay() {
 function playRound(playerSelection, computerSelection) {
     // if its a tie, the tieGame tally is marked up
     if (playerSelection === computerSelection) {
-        selected.textContent = `You both chose ${computerSelection}`
+        selected.textContent = `You both chose ${computerSelection}!`
         winner.textContent = `Its a tie! Try again!`
         tieGame++
         tie.textContent = `Tie games: ${tieGame}`
