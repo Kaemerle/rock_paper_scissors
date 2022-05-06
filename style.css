@@ -33,3 +33,7 @@ h1 {
   display: flex;
   justify-content: center;
 }
+
+.buttons img {
+  max-height: 150px;
+}
