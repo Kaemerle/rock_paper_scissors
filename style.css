@@ -16,6 +16,7 @@ h1 {
 
 .selected {
   display: flex;
+  margin-top: 2rem;
   justify-content: center;
 }
 .scores {
@@ -36,4 +37,21 @@ h1 {
 
 .buttons img {
   max-height: 150px;
+  border: solid 2px black;
+}
+
+.rockBtn:hover {
+  transform: scale(1.2);
+  border-color: solid 2px crimson;
+  box-shadow: 0 0 1rem crimson;
+}
+.paperBtn:hover {
+  transform: scale(1.2);
+  border-color: solid 2px crimson;
+  box-shadow: 0 0 1rem crimson;
+}
+.scissorsBtn:hover {
+  transform: scale(1.2);
+  border-color: solid 2px crimson;
+  box-shadow: 0 0 1rem crimson;
 }
